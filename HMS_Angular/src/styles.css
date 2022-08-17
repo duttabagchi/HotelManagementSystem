@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/bootstrap/css/bootstrap.min.css';
+@import 'assets/assets/css/plugins.css';
+@import 'assets/assets/css/components/cards/card.css';
+@import 'assets/plugins/animate/animate.css';
+@import 'assets/assets/css/components/custom-modal.css';
+@import 'assets/assets/css/authentication/form-1.css';   
+@import 'assets/assets/css/components/tabs-accordian/custom-tabs.css';
+@import 'https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css';
+@import 'assets/assets/css/components/tabs-accordian/custom-accordions.css';
+@import 'assets/assets/css/forms/switches.css';
+@import 'assets/assets/css/forms/theme-checkbox-radio.css';
+@import 'assets/assets/css/forms/switches.css';
+@import 'assets/assets/css/tables/table-basic.css';
+@import 'assets/plugins/drag-and-drop/dragula/dragula.css';
+@import 'assets/plugins/drag-and-drop/dragula/example.css';
+@import 'assets/plugins/apex/apexcharts.css';
+@import 'assets/assets/css/dashboard/dash_1.css';
+
+table.dataTable td.dataTables_empty {
+    text-align: center;
+    background-color: black !important;
+  }
+
+  .dataTables_wrapper .dataTables_length select {
+    border: 1px solid #aaa !important;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: #9e9d9d !important;
+    padding: 4px;
+  
+  }
+
+  .dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #aaa !important;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: #9e9d9d !important;
+    margin-left: 3px;
+  }
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 1.5em;
+    padding: 0.5em 1em;
+    margin-left: 2px;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    *cursor: hand;
+    color: rgb(219, 219, 219) !important;
+    border: 1px solid transparent;
+    border-radius: 2px;
+  }
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    cursor: default;
+    color: rgb(219, 219, 219) !important;
+    border: 1px solid transparent;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .dataTables_wrapper .dataTables_paginate {
+    color: rgb(212, 212, 212) !important;
+  }
+
+  .dataTables_wrapper .dataTables_info {
+    color: rgb(212, 212, 212) !important;
+  }
+  a{
+    cursor: pointer;
+  }
+
+  
+
+
+table{
+  border: 1px solid;
+}
+td{
+  color:#9e9d9d !important;
+  background: black;
+  font-size: 14px !important;
+}
+
+th{
+  font-size: 14px !important;
+  color:black !important;
+  background: #9e9d9d;
+  font-weight: bolder !important;
+}
+
+.dataTables_info{
+  color: white !important;
+}
+
+.form-content h1{
+  color: white !important;
+}

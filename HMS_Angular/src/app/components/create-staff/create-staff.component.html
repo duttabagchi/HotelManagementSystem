@@ -1,0 +1,104 @@
+
+<div class="table-responsive margin_top">
+    <div id="tableSimple" class="col-lg-12 col-12 layout-spacing">
+        <div class="statbox widget box box-shadow">
+            <div class="widget-header">
+            <div class="row">
+                <div class="col-xl-8 col-md-8 col-sm-8 col-8">
+                <h4 class="margin_spacing">Create Staff</h4>
+                </div>
+                <div class="col-xl-4 col-md-4 col-sm-4 col-4">
+                <div class="text-center">
+                    
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="widget-content widget-content-area">
+            <div class="table-responsive">
+                <form #staffCreateForm = "ngForm" (ngSubmit) = "onSubmit(staffCreateForm)" [formGroup]="CreateStaff">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Staff Name <span class="requireddot">*</span></label>
+                                <input [ngClass]="{ 'is-invalid': Submitted && f.staffName.errors }" formControlName="staffName" name='staffName' ngModel type="text" class="form-control"  placeholder="Staff Name">
+                                <div *ngIf="Submitted && f.staffName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.staffName.errors.required">Name is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Aadhaar No.  <span class="requireddot">*</span></label>
+                                <input required minlength="12" required maxlength="12" [ngClass]="{ 'is-invalid': Submitted && f.nic.errors }" formControlName="nic" name='nic'  type="text" ngModel class="form-control"  placeholder="Aadhaar No.">
+                                <div *ngIf="Submitted && f.nic.errors" class="invalid-feedback">
+                                    <div *ngIf="f.nic.errors.required">Aadhaar No. is required</div>
+                                    <div *ngIf="f.nic.errors?.minlength">Aadhaar No. should be of 12 digits</div>
+                                    <div *ngIf="f.nic.errors?.maxlength">Aadhaar No. should be of 12 digits</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Address <span class="requireddot">*</span></label>
+                                <textarea [ngClass]="{ 'is-invalid': Submitted && f.address.errors }" formControlName="address" name='address'  ngModel   class="form-control"  placeholder="Address"></textarea>
+                                <div *ngIf="Submitted && f.address.errors" class="invalid-feedback">
+                                    <div *ngIf="f.address.errors.required">Address is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Salary <span class="requireddot">*</span></label>
+                                <input [ngClass]="{ 'is-invalid': Submitted && f.salary.errors }" formControlName="salary" name='salary'  ngModel type="number" min="0"  class="form-control"  placeholder="Salary">
+                                <div *ngIf="Submitted && f.salary.errors" class="invalid-feedback">
+                                    <div *ngIf="f.salary.errors.required">Salary is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Age <span class="requireddot">*</span></label>
+                                <input [ngClass]="{ 'is-invalid': Submitted && f.age.errors }" formControlName="age" name='age'  ngModel type="number" min="0"  class="form-control"  placeholder="Age">
+                                <div *ngIf="Submitted && f.age.errors" class="invalid-feedback">
+                                    <div *ngIf="f.age.errors.required">Age is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Occupation <span class="requireddot">*</span></label>
+                                <input [ngClass]="{ 'is-invalid': Submitted && f.occupation.errors }" formControlName="occupation" name='occupation'  ngModel type="text"  class="form-control"  placeholder="Occupation">
+                                <div *ngIf="Submitted && f.occupation.errors" class="invalid-feedback">
+                                    <div *ngIf="f.occupation.errors.required">Occupation is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Email <span class="requireddot">*</span></label>
+                                <input [ngClass]="{ 'is-invalid': Submitted && f.email.errors }" formControlName="email" name='email'  ngModel type="email"  class="form-control"  placeholder="Email">
+                                <div *ngIf="Submitted && f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required">Email is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                          
+                    <button type="submit" class="btn btn-primary mb-4 mr-2">Create</button>
+                    <button (click)="cancelform()" type="button" class="btn btn-danger mb-4 mr-2">Cancel</button>
+                </form>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

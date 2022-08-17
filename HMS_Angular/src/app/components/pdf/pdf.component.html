@@ -1,0 +1,38 @@
+<div>
+    <br>
+    <br>
+</div>
+<div class="table-responsive">
+    <div id="htmlData">
+        <div>
+            Rate of a Room
+        </div>
+        <table class="table table-bordered mb-4">
+            <thead>
+                <tr>
+                  <th> Id</th>
+                  <th> No of Days</th>
+                  <th> Extension Price</th>
+                  <th> Per Night Price</th>
+                  <th> Total Amount</th>
+                  <th> Room Type</th>
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>{{ this.rate_id }}</td>
+                    <td>{{ this.no_of_Days }}</td>
+                    <td>{{ this.extensionPrice | currency : "₹ "}}</td>
+                    <td>{{ this.perNightPrice | currency : "₹ "}}</td>
+                    <td>{{ this.totalAmount | currency : "₹ "}}</td>
+                    <td>{{ this.room_id }} : {{ this.room_type}}</td>
+                </tr>
+              </tbody>
+        </table> 
+        
+    </div>
+</div>
+<div>
+    <button type="button" class="btn btn-primary" (click)="openPDF()"> Download </button>
+</div>

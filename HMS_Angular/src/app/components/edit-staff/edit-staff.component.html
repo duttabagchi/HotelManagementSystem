@@ -1,0 +1,82 @@
+
+<div class="table-responsive margin_top">
+    <div id="tableSimple" class="col-lg-12 col-12 layout-spacing">
+        <div class="statbox widget box box-shadow">
+            <div class="widget-header">
+            <div class="row">
+                <div class="col-xl-8 col-md-8 col-sm-8 col-8">
+                <h4 class="margin_spacing">Update Staff</h4>
+                </div>
+                <div class="col-xl-4 col-md-4 col-sm-4 col-4">
+                <div class="text-center">
+                    
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="widget-content widget-content-area">
+            <div class="table-responsive">
+                <form #staffUpdateForm = "ngForm" (ngSubmit) = "onSubmit(staffUpdateForm)">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Staff Name <span class="requireddot">*</span></label>
+                                <input name='staffName' [(ngModel)]="this.staffName" type="text" class="form-control"  placeholder="Staff Name">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Aadhaar No.  <span class="requireddot">*</span></label>
+                                <input name='nic'  type="text" [(ngModel)]="this.nic" class="form-control"  placeholder="Aadhaar No." readonly>
+                            </div>
+                        </div>[]
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Address <span class="requireddot">*</span></label>
+                                <textarea name='address'  [(ngModel)]="this.address"   class="form-control"  placeholder="Address"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Salary <span class="requireddot">*</span></label>
+                                <input name='salary'  [(ngModel)]="this.salary" type="number"  class="form-control"  placeholder="Salary">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Age <span class="requireddot">*</span></label>
+                                <input name='age'  [(ngModel)]="this.age" type="number"  class="form-control"  placeholder="Age">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Occupation <span class="requireddot">*</span></label>
+                                <input name='occupation'  [(ngModel)]="this.occupation" type="text"  class="form-control"  placeholder="Occupation">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Email <span class="requireddot">*</span></label>
+                                <input name='email'  [(ngModel)]="this.email" type="email"  class="form-control"  placeholder="Email">
+                            </div>
+                        </div>
+
+
+                    </div>
+                   
+                
+                    <button type="submit" class="btn btn-primary mb-4 mr-2">Update</button>
+                    <button (click)="cancelform()" type="button" class="btn btn-danger mb-4 mr-2">Cancel</button>
+                </form>
+            </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

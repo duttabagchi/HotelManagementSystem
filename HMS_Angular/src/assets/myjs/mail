@@ -1,0 +1,29 @@
+// var nodemailer = require('nodemailer');
+
+// var transporter = nodemailer.createTransport({
+//   service:'gmail',
+//   port:587,
+//   secure:false,
+//   auth:{
+//     user:'hotelsystem2022@gmail.com',
+//     pass:'2022_Hotel'
+//   }
+// });
+
+// var mailOptions = {
+//     from:'hotelsystem2022@gmail.com',
+//     to:'abhilashtells@gmail.com',
+//     subject:'Welcome',
+//     text:'Payment Done'
+// };
+
+// transporter.sendMail(mailOptions,function(error,info){
+//     if(error)
+//     {
+//         console.log(error);
+//     }
+//     else
+//     {
+//         console.log('email sent' + info.response);
+//     }
+// });

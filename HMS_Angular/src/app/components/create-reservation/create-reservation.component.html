@@ -1,0 +1,101 @@
+
+<div class="table-responsive margin_top">
+    <div id="tableSimple" class="col-lg-12 col-12 layout-spacing">
+        <div class="statbox widget box box-shadow">
+            <div class="widget-header">
+            <div class="row">
+                <div class="col-xl-8 col-md-8 col-sm-8 col-8">
+                <h4 class="margin_spacing">Create Reservation</h4>
+                </div>
+                <div class="col-xl-4 col-md-4 col-sm-4 col-4">
+                <div class="text-center">
+                    
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="widget-content widget-content-area">
+            <div class="table-responsive">
+                <form #reservationCreateForm = "ngForm" (ngSubmit) = "onSubmit(reservationCreateForm)" [formGroup]="CreateReservation">
+                    <div class="row">
+                        
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">No. of Children <span>*</span></label>
+                                <input [ngClass]="{ 'is-invalid': Submitted && f.no_of_children.errors }" formControlName="no_of_children" name='no_of_children' ngModel type="number" class="form-control"  placeholder="Number of Children">
+                                <div *ngIf="Submitted && f.no_of_children.errors" class="invalid-feedback">
+                                    <div *ngIf="f.no_of_children.errors.required">No. of Children is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">No. of Adults  <span>*</span></label>
+                                <input [ngClass]="{ 'is-invalid': Submitted && f.no_of_adults.errors }" formControlName="no_of_adults" name='no_of_adults' ngModel type="number" class="form-control"  placeholder="Number of Adults">
+                                <div *ngIf="Submitted && f.no_of_adults.errors" class="invalid-feedback">
+                                    <div *ngIf="f.no_of_adults.errors.required">No. of Adults is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Check-in date <span>*</span></label>
+                                <input [ngClass]="{ 'is-invalid': Submitted && f.checkin_date.errors }" formControlName="checkin_date" name='checkin_date'  ngModel type="date"  class="form-control"  placeholder="Check-in date">
+                                <div *ngIf="Submitted && f.checkin_date.errors" class="invalid-feedback">
+                                    <div *ngIf="f.checkin_date.errors.required">Check-in date is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Check-out date <span>*</span></label>
+                                <input [ngClass]="{ 'is-invalid': Submitted && f.checkout_date.errors }" formControlName="checkout_date" name='checkout_date'  ngModel type="date"  class="form-control"  placeholder="Check-out date">
+                                <div *ngIf="Submitted && f.checkout_date.errors" class="invalid-feedback">
+                                    <div *ngIf="f.checkout_date.errors.required">Check-out date is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">No. of Rooms <span>*</span></label>
+                                <input [ngClass]="{ 'is-invalid': Submitted && f.no_of_rooms.errors }" formControlName="no_of_rooms" name='no_of_rooms'  ngModel type="number"  class="form-control"  placeholder="Number of Rooms">
+                                <div *ngIf="Submitted && f.no_of_rooms.errors" class="invalid-feedback">
+                                    <div *ngIf="f.no_of_rooms.errors.required">No. of Rooms is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                        
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Phone Number <span>*</span></label>
+                                <input required minlength="10" required maxlength="10" [ngClass]="{ 'is-invalid': Submitted && f.phnNumber.errors && f.phnNumber.invalid }" formControlName="phnNumber" name='phnNumber'  ngModel type="text"  class="form-control"  placeholder="Phone Number">
+                                <div *ngIf="Submitted && f.phnNumber.errors && f.phnNumber.invalid " class="invalid-feedback">
+                                    <div *ngIf="f.phnNumber.errors?.required">Phone Number is required</div>
+                                    <div *ngIf="f.phnNumber.errors?.minlength">Phone Number should be of 10 digits</div>
+                                    <div *ngIf="f.phnNumber.errors?.maxlength">Phone Number should be of 10 digits</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                   
+                
+                    <button type="submit" class="btn btn-primary mb-4 mr-2">Create</button>
+                    <button (click)="cancelform()" type="button" class="btn btn-danger mb-4 mr-2">Cancel</button>
+                </form>
+            </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

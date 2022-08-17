@@ -1,0 +1,58 @@
+
+<div class="table-responsive margin_top">
+    <div id="tableSimple" class="col-lg-12 col-12 layout-spacing">
+        <div class="statbox widget box box-shadow">
+            <div class="widget-header">
+            <div class="row">
+                <div class="col-xl-8 col-md-8 col-sm-8 col-8">
+                <h4 class="margin_spacing">Edit Rate</h4>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-4 col-4">
+                <div class="text-center">
+                    
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="widget-content widget-content-area">
+            <div class="table-responsive">
+                <form #rateEditForm = "ngForm" (ngSubmit) = "onSubmit(rateEditForm)">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">No of Days <span class="requireddot">*</span></label>
+                                <input name='no_of_Days' [(ngModel)]="this.no_of_Days" type="text" class="form-control"  placeholder="No of Days">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Extension Price  <span class="requireddot">*</span></label>
+                                <input name='extensionPrice' [(ngModel)]="this.extensionPrice" type="number" class="form-control"  placeholder="Extension Price">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Per Night Price <span class="requireddot">*</span></label>
+                                <input name='perNightPrice'  [(ngModel)]="this.perNightPrice" type="number"  class="form-control"  placeholder="Per Night Price">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Room Type <span class="requireddot">*</span></label>
+                                <input name='room_type'  [(ngModel)]="this.room_type" type="text"  class="form-control"  placeholder="Room Type">
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                     
+                    <button type="submit" class="btn btn-primary mb-4 mr-2">Update</button>
+                    <button (click)="cancelform()" type="button" class="btn btn-danger mb-4 mr-2">Cancel</button>
+                </form>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

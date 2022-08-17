@@ -1,0 +1,82 @@
+<div class="table-responsive margin_top">
+    <div id="tableSimple" class="col-lg-12 col-12 layout-spacing">
+      <div class="statbox widget box box-shadow">
+        <div class="widget-header">
+          <div class="row">
+            <div class="col-xl-8 col-md-8 col-sm-8 col-8" style="margin-top: 30px;">
+              <h4 class="margin_spacing">Guest List</h4>
+            </div>
+            <div class="col-xl-4 col-md-4 col-sm-4 col-4">
+              <div class="text-center">
+      
+  
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="widget-content widget-content-area">
+          <div class="table-responsive">
+            <table class="table table-bordered mb-4" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+              <thead>
+                <tr>
+                  <th> Id</th>
+                  <th> Guest Name</th>
+                  <th> Address</th>
+                  <th> Phone Number</th>
+                  <th> Gender</th>
+                  
+                  <th width="120px">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor="let item of GuestDataList">
+                  <tr>
+                    <td>{{ item.guestId }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.address }}</td>
+                    <td>{{ item.phnNumber}}</td>
+                    <td>{{ item.gender }}</td>
+                    
+                    <td>
+                      <a  data-toggle="tooltip" (click)="editGuest(item.guestId)" data-placement="top"  title="Update Guest"
+                        routerLinkActive="router-link-active" style="margin-right: 10px"><svg
+                          xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="feather feather-edit">
+                          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg></a>
+
+                      <a  data-toggle="tooltip" data-placement="top"  title="Delete Guest"  (click)="deleteGuest(item.guestId)" 
+                        style="margin-right: 10px"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></a>
+                      
+                      <a routerLink="createReservation"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                        <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                      </svg></a>
+
+
+                    </td>
+                  </tr>
+                </ng-container>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ngx-loading [show]="loading" [config]="{
+      backdropBackgroundColour: 'rgba(255,255,255,0.3)',
+      backdropBorderRadius: '10px',
+      primaryColour: '#ffffff',
+      secondaryColour: '#ffffff',
+      tertiaryColour: '#ffffff'
+    }" [template]="customLoadingTemplate"></ngx-loading>
+  
+  <ng-template #customLoadingTemplate>
+    <div class="custom-class">
+      <h3>Loading...</h3>
+    </div>
+  </ng-template>

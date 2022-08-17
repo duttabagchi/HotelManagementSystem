@@ -1,0 +1,78 @@
+
+<div class="table-responsive margin_top">
+    <div id="tableSimple" class="col-lg-12 col-12 layout-spacing">
+        <div class="statbox widget box box-shadow">
+            <div class="widget-header">
+            <div class="row">
+                <div class="col-xl-8 col-md-8 col-sm-8 col-8">
+                <h4 class="margin_spacing">Create Rate</h4>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-4 col-4">
+                <div class="text-center">
+                    
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="widget-content widget-content-area">
+            <div class="table-responsive">
+                <form #rateCreateForm = "ngForm" (ngSubmit) = "onSubmit(rateCreateForm)" [formGroup]="CreateRate">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">No of Days <span>*</span></label>
+                                <input [ngClass]="{ 'is-invalid': Submitted && f.no_of_Days.errors }" formControlName="no_of_Days" name='no_of_Days' ngModel type="text" class="form-control"  placeholder="No of Days">
+                                <div *ngIf="Submitted && f.no_of_Days.errors" class="invalid-feedback">
+                                    <div *ngIf="f.no_of_Days.errors.required">No. of days is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Extension Price  <span>*</span></label>
+                                <input [ngClass]="{ 'is-invalid': Submitted && f.extensionPrice.errors }" formControlName="extensionPrice" name='extensionPrice' ngModel type="number" class="form-control"  placeholder="Extension Price">
+                                <div *ngIf="Submitted && f.extensionPrice.errors" class="invalid-feedback">
+                                    <div *ngIf="f.extensionPrice.errors.required">Extension Price is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Per Night Price <span>*</span></label>
+                                <input [ngClass]="{ 'is-invalid': Submitted && f.perNightPrice.errors }" formControlName="perNightPrice" name='perNightPrice'  ngModel type="number"  class="form-control"  placeholder="Per Night Price">
+                                <div *ngIf="Submitted && f.perNightPrice.errors" class="invalid-feedback">
+                                    <div *ngIf="f.perNightPrice.errors.required">Per Night Price is required</div>
+                                </div>
+                            </div>
+                        </div>
+              
+                        
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Room ID <span>*</span></label>
+                                <select [ngClass]="{ 'is-invalid': Submitted && f.room_id.errors }" formControlName="room_id" name='room_id' ngModel class="form-control">
+                                    <option *ngFor="let item of roomDataList" value="{{item.room_id}}">{{item.room_id}} : {{item.room_type}}</option>
+                                </select>
+                                <div *ngIf="Submitted && f.room_id.errors" class="invalid-feedback">
+                                    <div *ngIf="f.room_id.errors.required">Room ID is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                   
+                
+                    <button type="submit" class="btn btn-primary mb-4 mr-2">Create</button>
+                    <button (click)="cancelform()" type="button" class="btn btn-danger mb-4 mr-2">Cancel</button>
+                </form>
+            </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

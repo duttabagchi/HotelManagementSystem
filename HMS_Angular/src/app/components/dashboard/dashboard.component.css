@@ -1,0 +1,44 @@
+.layout-px-spacing {
+    min-height: calc(100vh - 166px)!important;
+}
+
+.ngx-charts {
+    float: left !important; 
+    overflow: none; 
+    border-radius: 5px !important;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+  
+    
+  }
+  .ngx-charts-bar-horizontal{
+    height: 150px !important;
+  }
+
+
+  .expirylicenceassetinfo {
+    position: relative;
+    padding: 5px;
+    margin-bottom: 3px;
+    border-radius: 8px;
+    border: none;
+    background: #b3f9a1;
+    box-shadow: 0 6px 10px 0 rgba(115, 172, 94, 0.14), 0 1px 18px 0 rgba(176, 104, 104, 0.12), 0 3px 5px -1px rgb(0 0 0 / 20%);
+}
+
+.center-div {
+  margin: auto;
+  width: 50%;
+ 
+}
+
+.backgroundimage {
+  background-size: cover;
+  
+  flex:50%;
+  
+  background-image: url("../../../assets/assets/img/Cover.jpg");
+}
+

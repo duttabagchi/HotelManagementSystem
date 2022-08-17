@@ -1,0 +1,79 @@
+
+<div class="table-responsive margin_top">
+    <div id="tableSimple" class="col-lg-12 col-12 layout-spacing">
+        <div class="statbox widget box box-shadow">
+            <div class="widget-header">
+            <div class="row">
+                <div class="col-xl-8 col-md-8 col-sm-8 col-8">
+                <h4 class="margin_spacing">Create Guest</h4>
+                </div>
+                <div class="col-xl-4 col-md-4 col-sm-4 col-4">
+                <div class="text-center">
+                    
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="widget-content widget-content-area">
+            <div class="table-responsive">
+                <form #staffCreateForm = "ngForm" (ngSubmit) = "onSubmit(staffCreateForm)" [formGroup]="CreateGuest">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Guest Name <span>*</span></label>
+                                <input [ngClass]="{ 'is-invalid': Submitted && f.name.errors }" formControlName="name" name='name' required ngModel type="text" class="form-control"  placeholder="Guest Name">  
+                                <div *ngIf="Submitted && f.name.errors" class="invalid-feedback">
+                                    <div *ngIf="f.name.errors.required">Name is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Address <span>*</span></label>
+                                <textarea [ngClass]="{ 'is-invalid': Submitted && f.address.errors }" formControlName="address" name='address'  ngModel   class="form-control"  placeholder="Address"></textarea>
+                                <div *ngIf="Submitted && f.address.errors" class="invalid-feedback">
+                                    <div *ngIf="f.address.errors.required">Address is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Phone Number <span>*</span></label>
+                                <input required minlength="10" required maxlength="10" [ngClass]="{ 'is-invalid': Submitted && f.phnNumber.errors && f.phnNumber.invalid }" formControlName="phnNumber" name='phnNumber'  ngModel type="tel"  class="form-control"  placeholder="Phone Number">
+                                <div *ngIf="Submitted && f.phnNumber.errors && f.phnNumber.invalid " class="invalid-feedback">
+                                    <div *ngIf="f.phnNumber.errors?.required">Phone Number is required</div>
+                                    <div *ngIf="f.phnNumber.errors?.minlength">Phone Number should be of 10 digits</div>
+                                    <div *ngIf="f.phnNumber.errors?.maxlength">Phone Number should be of 10 digits</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Gender <span>*</span></label>
+                                <select [ngClass]="{ 'is-invalid': Submitted && f.gender.errors }" formControlName="gender" name='gender'  ngModel type="text"  class="form-control"  placeholder="Gender" name="status" class="form-control" ngModel type="text">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                                <div *ngIf="Submitted && f.gender.errors" class="invalid-feedback">
+                                    <div *ngIf="f.gender.errors.required">Gender is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                   
+                
+                    <button type="submit" class="btn btn-primary mb-4 mr-2">Create</button>
+                    <button (click)="cancelform()" type="button" class="btn btn-danger mb-4 mr-2">Cancel</button>
+                </form>
+            </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

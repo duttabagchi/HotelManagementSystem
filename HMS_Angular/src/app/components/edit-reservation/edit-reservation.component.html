@@ -1,0 +1,78 @@
+
+<div class="table-responsive margin_top">
+    <div id="tableSimple" class="col-lg-12 col-12 layout-spacing">
+        <div class="statbox widget box box-shadow">
+            <div class="widget-header">
+            <div class="row">
+                <div class="col-xl-8 col-md-8 col-sm-8 col-8">
+                <h4 class="margin_spacing">Edit Reservation</h4>
+                </div>
+                <div class="col-xl-4 col-md-4 col-sm-4 col-4">
+                <div class="text-center">
+                    
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="widget-content widget-content-area">
+            <div class="table-responsive">
+                <form #reservationEditForm = "ngForm" (ngSubmit) = "onSubmit(reservationEditForm)">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Number of Children <span class="requireddot">*</span></label>
+                                <input name='no_of_children' [(ngModel)]="this.no_of_children"  type="number" class="form-control"  placeholder="Number of Children">
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-12"></div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Number of Adults  <span class="requireddot">*</span></label>
+                                <input name='no_of_adults' [(ngModel)]="this.no_of_adults" type="number" class="form-control"  placeholder="Number of Adults">
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-12"></div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Check-in Date <span class="requireddot">*</span></label>
+                                <input name='checkin_date'  [(ngModel)]="this.checkin_date" type="date"  class="form-control"  placeholder="Check-in Date">
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-12"></div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Check-out Date <span class="requireddot">*</span></label>
+                                <input name='checkout_date'  [(ngModel)]="this.checkout_date" type="date"  class="form-control"  placeholder="Check-out Date">
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-12"></div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Number Of Rooms <span class="requireddot">*</span></label>
+                                <input name='no_of_rooms'  [(ngModel)]="this.no_of_rooms" type="number"  class="form-control"  placeholder="Number Of Rooms">
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-8 col-md-8 col-sm-12"></div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="form-group mb-4">
+                                <label for="">Phone Number <span class="requireddot">*</span></label>
+                                <input name='phnNumber'  [(ngModel)]="this.phnNumber" type="text"  class="form-control"  placeholder="Phone Number">
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                   
+                
+                    <button type="submit" class="btn btn-primary mb-4 mr-2">Update</button>
+                    <button (click)="cancelform()" type="button" class="btn btn-danger mb-4 mr-2">Cancel</button>
+                </form>
+            </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
